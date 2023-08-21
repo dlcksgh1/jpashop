@@ -7,6 +7,7 @@ import jpabook.jpashop.domain.OrderStatus;
 import jpabook.jpashop.repository.OrderRepository;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -73,4 +74,19 @@ public class OrderSimpleApiController {
             address = order.getDelivery().getAddress();
         }
     }
+
+    /**
+     * V3. 엔티티를 조회해서 DTO로 변환(fetch join 사용O)
+     * - fetch join으로 쿼리 1번 호출
+     * 참고: fetch join에 대한 자세한 내용은 JPA 기본편 참고
+     */
+    @GetMapping("/api/v3/simple-orders")
+    public Result orderV3() {
+        List<Order> orders = orderRepository.findWithMemberDelivery();
+        List<SimpleOrderDto> collect = orders.stream()
+                .map(o -> new SimpleOrderDto(o))
+                .collect(Collectors.toList());
+        return new Result(collect);
+    }
+
 }
