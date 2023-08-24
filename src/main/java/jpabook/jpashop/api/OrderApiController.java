@@ -124,4 +124,9 @@ public class OrderApiController {
         return new Result(orderQueryRepository.findOrderQueryDtos());
     }
 
+    @GetMapping("/api/v5/orders")
+    public Result orderV5() {
+        return new Result(orderQueryRepository.findAllByDto_optimization());
+    }
+
 }
