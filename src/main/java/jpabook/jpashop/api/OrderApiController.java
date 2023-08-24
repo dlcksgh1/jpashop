@@ -3,6 +3,7 @@ package jpabook.jpashop.api;
 
 import jpabook.jpashop.domain.*;
 import jpabook.jpashop.repository.OrderRepository;
+import jpabook.jpashop.repository.order.query.OrderQueryRepository;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -19,6 +20,8 @@ import java.util.stream.Collectors;
 public class OrderApiController {
 
     private final OrderRepository orderRepository;
+    private final OrderQueryRepository orderQueryRepository;
+
     /**
      * V1. 엔티티 직접 노출
      * - Hibernate5Module 모듈 등록, LAZY=null 처리
@@ -115,4 +118,10 @@ public class OrderApiController {
 
         return new Result(collect);
     }
+
+    @GetMapping("/api/v4/orders")
+    public Result ordersV4() {
+        return new Result(orderQueryRepository.findOrderQueryDtos());
+    }
+
 }
