@@ -33,3 +33,10 @@ JPA 활용2 - API 개발과 성능 최적화
 7. JPA 활용2 - API 개발 고급 - 컬렉션 조회(OneToMany) 최적화
 
    정리 블로그 링크 : https://velog.io/@cse05091/JPA-%ED%99%9C%EC%9A%A92-API-%EA%B0%9C%EB%B0%9C-%EA%B3%A0%EA%B8%89-%EC%BB%AC%EB%A0%89%EC%85%98-%EC%A1%B0%ED%9A%8COneToMany-%EC%B5%9C%EC%A0%81%ED%99%94
+
+8. JPA 활용2 - API 개발 고급 정리 + 실무 필수 최적화
+
+   정리 블로그 링크 : https://velog.io/@cse05091/JPA-%ED%99%9C%EC%9A%A92-API-%EA%B0%9C%EB%B0%9C-%EA%B3%A0%EA%B8%89-%EC%A0%95%EB%A6%AC-%EC%8B%A4%EB%AC%B4-%ED%95%84%EC%88%98-%EC%B5%9C%EC%A0%81%ED%99%94
+
+
+
